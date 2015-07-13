@@ -6,10 +6,10 @@
 * [Code style](#code-style)
 * [Lint tools](#lint-tools)
 * [Testing](#testing)
-* [Frameworks](#framworks)
+* [Frameworks](#frameworks)
 * Design patterns
 * Grunt as task runner
-* Rails way
+* [Rails way](#rails-way)
 * [Resources](#resources)
 
 ## Coffee or not?
@@ -20,7 +20,7 @@ After everything, CoffeeScript is for people who hate JavaScript. JavaScript war
 
 ## Code style
 
-Actually we use [ES5 Vizzuality's code style](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/es5.md).
+Currently we use [ES5 Vizzuality's code style](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/es5.md).
 
 ### About ECMAScript 6
 
@@ -44,7 +44,7 @@ Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.
 
 For testing we use [Mocha](http://mochajs.org/). It is a feature-rich JavaScript test framework running on node and the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
 
-Configuring test:
+**Configuring test**:
 
     // package.json
     ...
@@ -60,7 +60,7 @@ Configuring test:
 
 Install dependencies with `npm install`.
 
-Creating a test case:
+**Creating a test case**:
 
     describe('addition', function () {
         it('should add 1+1 correctly', function (done) {
@@ -72,7 +72,7 @@ Creating a test case:
         });
     });
 
-Running test with node:
+**Running test with node**:
 
     npm test
 
@@ -81,7 +81,7 @@ Running test with node:
     ✓ should add 1+1 correctly
     ✔ 1 test complete (3ms)
 
-Test directory and file structure:
+**Test directory and file structure**:
 
     /test
         /specs
@@ -91,14 +91,94 @@ Test directory and file structure:
             some_helper.js
         index.html // to run in browser
 
-Other useful tools:
+**Other useful tools**:
 
 * [Chai](http://chaijs.com/) is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
 * [Sinon](http://sinonjs.org/) Standalone test spies, stubs and mocks for JavaScript.
 
+**Tutorials**:
+
+* [Backbone Chai Gist](https://gist.github.com/michaelcox/3800736)
+* [Mocha + Chai + Sinon](https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/)
+* [Node Js and Chai](http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018)
+
 **[⬆ back to top](#table-of-contents)**
 
 # Frameworks
+
+## Backbone Js way
+
+[Backbone.js](http://backbonejs.org/) gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface
+
+[Require.js](http://requirejs.org/) is a must. It is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.
+
+**Directory structure**
+    /templates
+        map_tpl.hbs
+        ...
+    /views
+        map_view.js
+        ...
+    /models
+        user_model.js
+        ...
+    /collections
+        countries_collection.js
+        ...
+    router.js
+    app.js
+    main.js // configuration file, useful for almond and require.js
+
+**Directory structure Rails way**
+
+    /common
+        /templates
+            common_tpl.hbs
+            ...
+        /collections
+            common_collection.js
+            ...
+        /models
+            common_model.js
+            ...
+        /views
+            common_view.js
+    /application
+        /views
+            map_view.js
+            ...
+        /templates
+            map_tpl.hbs
+            ...
+        /models
+            user_model.js
+            ...
+        /collections
+            countries_collection.js
+            ...
+        router.js
+    /other_application
+        /templates
+            map_tpl.hbs
+        /views
+            map_view.js
+            ...
+        /models
+            user_model.js
+            ...
+        /collections
+            countries_collection.js
+            ...
+        router.js
+    application.js
+    other_application.js
+    static.js
+
+    [More info](#rails-way)
+
+**[⬆ back to top](#table-of-contents)**
+
+## Rails way
 
 **[⬆ back to top](#table-of-contents)**
 
