@@ -42,6 +42,60 @@ Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.
 
 # Testing
 
+For testing we use [Mocha](http://mochajs.org/). It is a feature-rich JavaScript test framework running on node and the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
+
+Configuring test:
+
+    // package.json
+    ...
+    "scripts": {
+        "test": "node_modules/.bin/mocha"
+    }
+    ...
+    "devDependencies": {
+       "mocha": "^2.2.5",
+       "chai": "^3.0.0"
+    }
+    ...
+
+Install dependencies with `npm install`.
+
+Creating a test case:
+
+    describe('addition', function () {
+        it('should add 1+1 correctly', function (done) {
+            var onePlusOne = 1 + 1;
+            expect(onePlusOne).to.be.equal(2);
+            // must call done() so that mocha know that we are... done.
+            // Useful for async tests.
+            done();
+        });
+    });
+
+Running test with node:
+
+    npm test
+
+    // Result
+    addition
+    ✓ should add 1+1 correctly
+    ✔ 1 test complete (3ms)
+
+Test directory and file structure:
+
+    /test
+        /specs
+            router_spec.js
+            map_view_spec.js
+        /helpers
+            some_helper.js
+        index.html // to run in browser
+
+Other useful tools:
+
+* [Chai](http://chaijs.com/) is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
+* [Sinon](http://sinonjs.org/) Standalone test spies, stubs and mocks for JavaScript.
+
 **[⬆ back to top](#table-of-contents)**
 
 # Frameworks
