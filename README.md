@@ -1,1 +1,1 @@
-# workflow-style-guide
+# Vizzuality's front-end work flow
