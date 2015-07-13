@@ -5,8 +5,8 @@
 * [Coffee or not?](#coffee-or-not)
 * [Code style](#code-style)
 * [Lint tools](#lint-tools)
-* Testing (TDD)
-* Frameworks
+* [Testing](#testing)
+* [Frameworks](#framworks)
 * Grunt as task runner
 * Rails way
 * [Resources](#resources)
@@ -30,10 +30,18 @@ Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.
 
 **[⬆ back to top](#table-of-contents)**
 
-# Lint
+# Lint tools
 
 * [JSHint](http://www.jshint.com/) - [Vizzuality Style .jshintrc](.jshintrc)
 * [JSCS](https://github.com/jscs-dev/node-jscs) - [Vizzuality Style .jscsrc](.jscsrc)
+
+**[⬆ back to top](#table-of-contents)**
+
+# Testing
+
+**[⬆ back to top](#table-of-contents)**
+
+# Frameworks
 
 **[⬆ back to top](#table-of-contents)**
 
