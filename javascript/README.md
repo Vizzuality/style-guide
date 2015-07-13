@@ -7,6 +7,7 @@
 * [Lint tools](#lint-tools)
 * [Testing](#testing)
 * [Frameworks](#framworks)
+* Design patterns
 * Grunt as task runner
 * Rails way
 * [Resources](#resources)
@@ -19,7 +20,7 @@ After everything, CoffeeScript is for people who hate JavaScript. JavaScript war
 
 ## Code style
 
-Actually we use [ES5 Vizzuality's code style](https://github.com/Vizzualuty/javascript/es5.md).
+Actually we use [ES5 Vizzuality's code style](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/es5.md).
 
 ### About ECMAScript 6
 
@@ -34,8 +35,8 @@ Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.
 
 # Lint tools
 
-* [JSHint](http://www.jshint.com/) - [Vizzuality Style .jshintrc](.jshintrc)
-* [JSCS](https://github.com/jscs-dev/node-jscs) - [Vizzuality Style .jscsrc](.jscsrc)
+* [JSHint](http://www.jshint.com/) - [Vizzuality Style .jshintrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/.jshintrc)
+* [JSCS](https://github.com/jscs-dev/node-jscs) - [Vizzuality Style .jscsrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/.jscsrc)
 
 **[⬆ back to top](#table-of-contents)**
 
