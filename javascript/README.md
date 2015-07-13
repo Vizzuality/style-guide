@@ -19,14 +19,16 @@ After everything, CoffeeScript is for people who hate JavaScript. JavaScript war
 
 ## Code style
 
+Actually we use [ES5 Vizzuality's code style](https://github.com/Vizzualuty/javascript/es5.md).
+
+### About ECMAScript 6
+
 * [ES5 Compatibility table](http://kangax.github.io/compat-table/es5/)
 * [ES6 Compatibility table](http://kangax.github.io/compat-table/es6/)
 
 Current support for ES6 is quite limited and a lot of the ES6 spec is still in draft form.  We can look forward to these features (and much more) in the near future, but I wouldn’t recommend using them now.
 
 Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.io/) (a JavaScript compiler).
-
-[ES5 Vizzuality's code style](https://github.com/Vizzualuty/javascript/es5.md)
 
 **[⬆ back to top](#table-of-contents)**
 
