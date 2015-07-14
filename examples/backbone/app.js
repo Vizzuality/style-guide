@@ -30,7 +30,7 @@ define([
 
     showDetail: function(iso) {
       this.clearView();
-      this.detailView.country.setCountry({ iso: iso });
+      this.detailView.setCountry({ iso: iso });
       this.detailView.country.fetch().done(function() {
         this.currentView = this.detailView;
         this.render();
