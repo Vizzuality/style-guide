@@ -8,6 +8,10 @@ define(['backbone'], function(Backbone) {
       '(/)': 'index',
       'countries(/)': 'countries',
       'countries/:iso': 'country'
+    },
+
+    index: function() {
+      this.navigate('countries', { trigger: true });
     }
 
   });
