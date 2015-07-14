@@ -21,12 +21,28 @@ define([
     },
 
     showCountries: function() {
-      this.countriesView.countries.fetch();
+      this.clearView();
+      this.countriesView.countries.fetch().done(function() {
+        this.currentView = this.countriesView;
+        this.render();
+      }.bind(this));
     },
 
     showDetail: function(iso) {
+      this.clearView();
       this.detailView.country.setId(iso);
-      this.detailView.country.fetch();
+      this.detailView.country.fetch().done(function() {
+        this.currentView = this.detailView;
+        this.render();
+      }.bind(this));
+    },
+
+    clearView: function() {
+      this.$el.html(null);
+    },
+
+    render: function() {
+      this.$el.html(this.currentView.render().el);
     },
 
     start: function() {

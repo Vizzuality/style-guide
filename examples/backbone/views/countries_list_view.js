@@ -22,7 +22,8 @@ define([
 
     render: function() {
       var data = this.countries.toJSON();
-      return this.$el.html(this.template(data)).el;
+      this.$el.html(this.template(data));
+      return this
     }
 
   });
