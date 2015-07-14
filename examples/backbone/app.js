@@ -35,6 +35,6 @@ define([
 
   });
 
-  return new App().start();
+  return App;
 
 });
