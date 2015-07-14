@@ -1,12 +1,15 @@
 define([
   'backbone',
+  'handlebars',
   'collections/countries_collection',
   'text!templates/countries_tpl.handlebars'
-], function(Backbone, CountriesCollection, CountriesView) {
+], function(Backbone, Handlebars, CountriesCollection, countriesTpl) {
 
   'use strict';
 
   var CountriesView = Backbone.View.extend({
+
+    template: Handlebars.compile(countriesTpl),
 
     initialize: function() {
       this.countries = new CountriesCollection();

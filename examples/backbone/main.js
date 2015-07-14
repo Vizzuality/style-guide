@@ -6,21 +6,11 @@ require.config({
     backbone: 'backbone_path/backbone',
     handlebars: 'handlebars_path/handlebars',
     text: 'text_plugin_path/text'
-  }
+  },
 
   shim: {
-    jquery: {
-      exports: '$'
-    },
-    underscore: {
-      exports: '_'
-    },
     backbone: {
-      deps: ['jquery', 'underscore'],
-      exports: 'Backbone'
-    },
-    handlebars: {
-      exports: 'Handlebars'
+      deps: ['jquery', 'underscore']
     }
   }
 
