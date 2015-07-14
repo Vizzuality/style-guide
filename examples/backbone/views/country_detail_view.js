@@ -11,9 +11,12 @@ define([
 
     template: Handlebars.compile(detailTpl),
 
-    initialize: function(settings) {
-      this.country = new CountryModel(settings.id);
+    initialize: function() {
       this.setListeners();
+    },
+
+    setCountry: function(settings) {
+      this.country = new CountryModel(settings);
     },
 
     setListeners: function() {

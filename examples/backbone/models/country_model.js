@@ -10,9 +10,7 @@ define(['backbone'], function(Backbone) {
       iso: 'ESP'
     },
 
-    url: function() {
-      return '/countries/' + this.id;
-    },
+    urlRoot: '/countries/',
 
     setId: function(id) {
       this.id = id;
