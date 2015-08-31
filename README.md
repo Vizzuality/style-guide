@@ -1,4 +1,63 @@
-# Vizzuality's front-end work flow
+# Vizzuality's front-end workflow
+
+This styleguide is a resource for front end developers, providing a commons languages around Vizzuality's UI patterns. We use it to maintain modular front-end code and visual consistency across the web apps.
+
+## Languages
+
+* [Sass](sass/)
+* [Javascript](javascript/)
+
+
+## Tools
+
+**Mac package manager**
+
+* [Brew](http://brew.sh/) (Required)
+
+**Browser**
+
+* [Chrome](https://www.google.com/chrome/) (Required)
+* [Chromium](https://download-chromium.appspot.com/)
+* [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+
+**Comunication**
+
+* [Slack](https://slack.com/) (Required)
+* [Skype](http://www.skype.com/en/)
+
+**Git client**
+
+* [Tower](http://www.git-tower.com/) (Pay)
+* [SourceTree](https://www.sourcetreeapp.com/)
+
+**API REST client**
+
+* [Postman](https://www.getpostman.com/) (Chrome)
+* [Paw](https://luckymarmot.com/paw)
+
+**Cloud storage**
+
+* [Dropbox](https://www.dropbox.com/en/) (Required)
+
+**Design**
+
+* [Zeplin](https://zeplin.io/) (Required)
+* [Sketch](http://bohemiancoding.com/sketch/) (Pay)
+
+**IDE and text editor**
+
+[Webstorm](https://www.jetbrains.com/webstorm/), [Sublime Text 3](http://www.sublimetext.com/3), [Atom](https://atom.io/) or similar supporting the next modules:
+
+* Editorconfig (Required)
+* Emmet
+* Sass, Handlebars, Ruby, ES6, etc syntax colors
+
+
+## Tutorials and others useful resources
+
+* [How to Install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X (From Snow Leopard to Yosemite)](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
+* [Your dotfiles might be the most important files on your machine](https://dotfiles.github.io/)
+
 
 ## Contributing
 
