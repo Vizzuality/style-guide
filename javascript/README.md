@@ -6,10 +6,8 @@
 * [Code style](#code-style)
 * [Lint tools](#lint-tools)
 * [Testing](#testing)
-* [Frameworks](#frameworks)
+* [Frameworks and tools](#frameworks-and-tools)
 * Design patterns
-* Grunt as task runner
-* [Rails way](#rails-way)
 * [Resources](#resources)
 
 ## Coffee or not?
@@ -35,8 +33,10 @@ Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.
 
 # Lint tools
 
-* [JSHint](http://www.jshint.com/) - [Vizzuality Style .jshintrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/.jshintrc)
-* [JSCS](https://github.com/jscs-dev/node-jscs) - [Vizzuality Style .jscsrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/.jscsrc)
+I recommend use these tools in all projects. They help us to detect errors and potential problems in code.
+
+* [JSHint](http://www.jshint.com/) - [Vizzuality Style .jshintrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/files/.jshintrc)
+* [JSCS](https://github.com/jscs-dev/node-jscs) - [Vizzuality Style .jscsrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/files/.jscsrc)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -86,7 +86,8 @@ Install dependencies with `npm install`.
     /test
         /specs
             router_spec.js
-            map_view_spec.js
+            /views
+            	map_view_spec.js
         /helpers
             some_helper.js
         index.html // to run in browser
@@ -95,6 +96,7 @@ Install dependencies with `npm install`.
 
 * [Chai](http://chaijs.com/) is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
 * [Sinon](http://sinonjs.org/) Standalone test spies, stubs and mocks for JavaScript.
+* [Teaspoon](https://github.com/modeset/teaspoon) Front end test gem for rails projects.
 
 **Tutorials**:
 
@@ -104,81 +106,28 @@ Install dependencies with `npm install`.
 
 **[⬆ back to top](#table-of-contents)**
 
-# Frameworks
+# Frameworks and tools
 
-## Backbone Js way
+* **[Backbone.js](http://backbonejs.org/)** gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface. [Example and file structure](https://github.com/Vizzuality/workflow-style-guide/blob/master/examples/backbone-way).
 
-[Backbone.js](http://backbonejs.org/) gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface
+* **[Rails](http://backbonejs.org/)** is the most well thought-out web development framework I've ever used. Before Ruby on Rails, web programming required a lot of verbiage, steps and time. After researching the market, Ruby on Rails stood out as the best choice. [Example and file structure](https://github.com/Vizzuality/workflow-style-guide/blob/master/examples/rails-way).
 
-[Require.js](http://requirejs.org/) is a must. It is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.
+**Front end dependencies manager**
 
-**Directory structure**
-    /templates
-        map_tpl.hbs
-        ...
-    /views
-        map_view.js
-        ...
-    /models
-        user_model.js
-        ...
-    /collections
-        countries_collection.js
-        ...
-    router.js
-    app.js
-    main.js // configuration file, useful for almond and require.js
+* [Bower](http://bower.io/): Web sites are made of lots of things — frameworks, libraries, assets, utilities, and rainbows. Bower manages all these things for you. **We're not going to use it for Rails applications**.
+* [Rails assets](https://rails-assets.org/). It automatically converts the packaged components into gems that are easily droppable into your asset pipeline and stay up to date. **We only use it for Rails applications**
 
-**Directory structure Rails way**
 
-    /common
-        /templates
-            common_tpl.hbs
-            ...
-        /collections
-            common_collection.js
-            ...
-        /models
-            common_model.js
-            ...
-        /views
-            common_view.js
-    /application
-        /views
-            map_view.js
-            ...
-        /templates
-            map_tpl.hbs
-            ...
-        /models
-            user_model.js
-            ...
-        /collections
-            countries_collection.js
-            ...
-        router.js
-    /other_application
-        /templates
-            map_tpl.hbs
-        /views
-            map_view.js
-            ...
-        /models
-            user_model.js
-            ...
-        /collections
-            countries_collection.js
-            ...
-        router.js
-    application.js
-    other_application.js
-    static.js
+**Task runner**
 
-    [More info](#rails-way)
+* [Grunt](http://gruntjs.com/): Automation, performing repetitive tasks like minification, compilation, unit testing and linting. **We're not going to use it for Rails applications**.
 
-**[⬆ back to top](#table-of-contents)**
 
-## Rails way
+**Modules loader**
+
+* [Require.js](http://requirejs.org/) is a must. It is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.
+
+* [Webpack](http://webpack.github.io/) is a module bundler. This means webpack takes modules with dependencies and emits static assets representing those modules.
 
 **[⬆ back to top](#table-of-contents)**
 

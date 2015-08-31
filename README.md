@@ -4,9 +4,8 @@ This styleguide is a resource for front end developers, providing a commons lang
 
 ## Languages
 
-* [Sass](sass/)
+* [Sass](styles/)
 * [Javascript](javascript/)
-
 
 ## Tools
 
@@ -52,12 +51,10 @@ This styleguide is a resource for front end developers, providing a commons lang
 * Emmet
 * Sass, Handlebars, Ruby, ES6, etc syntax colors
 
-
 ## Tutorials and others useful resources
 
 * [How to Install Xcode, Homebrew, Git, RVM, Ruby & Rails on Mac OS X (From Snow Leopard to Yosemite)](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 * [Your dotfiles might be the most important files on your machine](https://dotfiles.github.io/)
-
 
 ## Contributing
 
