@@ -1,5 +1,7 @@
 # ES5 Vizzuality's JavaScript Style Guide
 
+Revised at 31 August 2015.
+
 ## Table of Contents
 
   1. [Types](#types)
@@ -1231,7 +1233,7 @@
     // bad
     var CheckBox = require('./checkBox');
 
-    // bad
+    // good but only for Rails projects
     var CheckBox = require('./check_box');
 
     // good
