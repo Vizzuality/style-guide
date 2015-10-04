@@ -29,6 +29,11 @@ Current support for ES6 is quite limited and a lot of the ES6 spec is still in d
 
 Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.io/) (a JavaScript compiler).
 
+Some ES6 references:
+
+* [ES6 Features](http://es6-features.org/)
+* [ES6 in Depth series](http://ponyfoo.com/articles/tagged/es6-in-depth)
+
 **[⬆ back to top](#table-of-contents)**
 
 # Lint tools
