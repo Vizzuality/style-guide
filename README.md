@@ -7,6 +7,11 @@ This styleguide is a resource for front end developers, providing a commons lang
 * [Sass](styles/) as default language for styling
 * [Javascript](javascript/)
 
+## Project structures
+* [SPA](project_structures/SPA.md)
+* RoR...
+
+
 ## Tools
 
 **Mac package manager**
