@@ -1,4 +1,4 @@
-# Vizzuality's front-end workflow
+# Vizzuality style guide
 
 This styleguide is a resource for front end developers, providing a commons languages around Vizzuality's UI patterns. We use it to maintain modular front-end code and visual consistency across the web apps.
 
