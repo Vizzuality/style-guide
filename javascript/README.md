@@ -18,9 +18,9 @@ After everything, CoffeeScript is for people who hate JavaScript. JavaScript war
 
 By default we are going to use ES6 way.
 
-* [Javascript ES5](javascript/es5.md) (deprecated)
-* [Javascript ES6](javascript/es6.md)
-* [React](javascript/react.md)
+* [Javascript ES5](./es5.md) (deprecated)
+* [Javascript ES6](./es6.md)
+* [React](./react.md)
 
 **[⬆ back to top](#table-of-contents)**
 
