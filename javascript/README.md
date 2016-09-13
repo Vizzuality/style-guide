@@ -4,10 +4,8 @@
 
 * [Coffee or not?](#coffee-or-not)
 * [Code style](#code-style)
-* [Lint tools](#lint-tools)
 * [Testing](#testing)
 * [Frameworks and tools](#frameworks-and-tools)
-* Design patterns
 * [Resources](#resources)
 
 ## Coffee or not?
@@ -18,30 +16,11 @@ After everything, CoffeeScript is for people who hate JavaScript. JavaScript war
 
 ## Code style
 
-Currently we use [ES5 Vizzuality's code style](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/es5.md).
+By default we are going to use ES6 way.
 
-### About ECMAScript 6
-
-* [ES5 Compatibility table](http://kangax.github.io/compat-table/es5/)
-* [ES6 Compatibility table](http://kangax.github.io/compat-table/es6/)
-
-Current support for ES6 is quite limited and a lot of the ES6 spec is still in draft form.  We can look forward to these features (and much more) in the near future, but I wouldn’t recommend using them now.
-
-Otherwhise, to practice and use ES6 the best tool is [Babel.js](https://babeljs.io/) (a JavaScript compiler).
-
-Some ES6 references:
-
-* [ES6 Features](http://es6-features.org/)
-* [ES6 in Depth series](http://ponyfoo.com/articles/tagged/es6-in-depth)
-
-**[⬆ back to top](#table-of-contents)**
-
-# Lint tools
-
-I recommend use these tools in all projects. They help us to detect errors and potential problems in code.
-
-* [JSHint](http://www.jshint.com/) - [Vizzuality Style .jshintrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/files/.jshintrc)
-* [JSCS](https://github.com/jscs-dev/node-jscs) - [Vizzuality Style .jscsrc](https://github.com/Vizzuality/workflow-style-guide/blob/master/javascript/files/.jscsrc)
+* [Javascript ES5](javascript/es5.md) (deprecated)
+* [Javascript ES6](javascript/es6.md)
+* [React](javascript/react.md)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -105,6 +84,7 @@ Install dependencies with `npm install`.
 
 **Tutorials**:
 
+* [React Mocha test](http://www.hammerlab.org/2015/02/14/testing-react-web-apps-with-mocha/)
 * [Backbone Chai Gist](https://gist.github.com/michaelcox/3800736)
 * [Mocha + Chai + Sinon](https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/)
 * [Node Js and Chai](http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018)
@@ -113,14 +93,19 @@ Install dependencies with `npm install`.
 
 # Frameworks and tools
 
-* **[Backbone.js](http://backbonejs.org/)** gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface. [Example and file structure](https://github.com/Vizzuality/workflow-style-guide/blob/master/examples/backbone-way).
+* **[Redux](https://facebook.github.io/react/)** is a predictable state container for JavaScript apps.
 
-* **[Rails](http://backbonejs.org/)** is the most well thought-out web development framework I've ever used. Before Ruby on Rails, web programming required a lot of verbiage, steps and time. After researching the market, Ruby on Rails stood out as the best choice. [Example and file structure](https://github.com/Vizzuality/workflow-style-guide/blob/master/examples/rails-way).
+* **[React.js](http://backbonejs.org/)** makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+* **[Backbone.js](http://backbonejs.org/)** gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.
+
+* **[Rails](http://backbonejs.org/)** is the most well thought-out web development framework I've ever used. Before Ruby on Rails, web programming required a lot of verbiage, steps and time. After researching the market, Ruby on Rails stood out as the best choice.
 
 **Front end dependencies manager**
 
-* [Bower](http://bower.io/): Web sites are made of lots of things — frameworks, libraries, assets, utilities, and rainbows. Bower manages all these things for you. **We're not going to use it for Rails applications**.
-* [Rails assets](https://rails-assets.org/). It automatically converts the packaged components into gems that are easily droppable into your asset pipeline and stay up to date. **We only use it for Rails applications**
+* [Browserify](http://browserify.org): Browserify lets you require('modules') in the browser by bundling up all of your dependencies. **We're not going to use it in Rails applications**.
+
+* [Rails assets](https://rails-assets.org/). It automatically converts the packaged components into gems that are easily droppable into your asset pipeline and stay up to date. **We only use it in Rails applications**
 
 
 **Task runner**
@@ -130,68 +115,87 @@ Install dependencies with `npm install`.
 
 **Modules loader**
 
-* [Require.js](http://requirejs.org/) is a must. It is a JavaScript file and module loader. It is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node. Using a modular script loader like RequireJS will improve the speed and quality of your code.
-
 * [Webpack](http://webpack.github.io/) is a module bundler. This means webpack takes modules with dependencies and emits static assets representing those modules.
 
 **[⬆ back to top](#table-of-contents)**
 
 ## Resources
 
-### Performance
+**Learning ES6**
 
-  - [On Layout & Web Performance](http://kellegous.com/j/2013/01/26/layout-performance/)
-  - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
-  - [Try/Catch Cost In a Loop](http://jsperf.com/try-catch-in-loop-cost)
-  - [Bang Function](http://jsperf.com/bang-function)
-  - [jQuery Find vs Context, Selector](http://jsperf.com/jquery-find-vs-context-sel/13)
-  - [innerHTML vs textContent for script text](http://jsperf.com/innerhtml-vs-textcontent-for-script-text)
-  - [Long String Concatenation](http://jsperf.com/ya-string-concat)
+  - [Draft ECMA 2015 (ES6) Spec](https://people.mozilla.org/~jorendorff/es6-draft.html)
+  - [ExploringJS](http://exploringjs.com/)
+  - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
+  - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
 
-### Further Reading
+**Read This**
 
-  - [Understanding JavaScript Closures](http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
+  - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
+
+**Tools**
+
+  - Code Style Linters
+    + [ESlint](http://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
+    + [JSHint](http://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
+    + [JSCS](https://github.com/jscs-dev/node-jscs) - [Airbnb Style Preset](https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json)
+
+**Other Style Guides**
+
+  - [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml)
+  - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
+  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
+
+**Other Styles**
+
+  - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
+  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
+  - [Popular JavaScript Coding Conventions on Github](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
+  - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
+
+**Further Reading**
+
+  - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
   - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
   - [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
-### Books
+**Books**
 
-  - [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
-  - [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
-  - [Pro JavaScript Design Patterns](http://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X)  - Ross Harmes and Dustin Diaz
-  - [High Performance Web Sites: Essential Knowledge for Front-End Engineers](http://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309) - Steve Souders
-  - [Maintainable JavaScript](http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680) - Nicholas C. Zakas
-  - [JavaScript Web Applications](http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X) - Alex MacCaw
-  - [Pro JavaScript Techniques](http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273) - John Resig
-  - [Smashing Node.js: JavaScript Everywhere](http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595) - Guillermo Rauch
-  - [Secrets of the JavaScript Ninja](http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X) - John Resig and Bear Bibeault
+  - [JavaScript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
+  - [JavaScript Patterns](https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
+  - [Pro JavaScript Design Patterns](https://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X)  - Ross Harmes and Dustin Diaz
+  - [High Performance Web Sites: Essential Knowledge for Front-End Engineers](https://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309) - Steve Souders
+  - [Maintainable JavaScript](https://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680) - Nicholas C. Zakas
+  - [JavaScript Web Applications](https://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X) - Alex MacCaw
+  - [Pro JavaScript Techniques](https://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273) - John Resig
+  - [Smashing Node.js: JavaScript Everywhere](https://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595) - Guillermo Rauch
+  - [Secrets of the JavaScript Ninja](https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X) - John Resig and Bear Bibeault
   - [Human JavaScript](http://humanjavascript.com/) - Henrik Joreteg
   - [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
   - [JSBooks](http://jsbooks.revolunet.com/) - Julien Bouquillon
-  - [Third Party JavaScript](http://manning.com/vinegar/) - Ben Vinegar and Anton Kovalyov
+  - [Third Party JavaScript](https://www.manning.com/books/third-party-javascript) - Ben Vinegar and Anton Kovalyov
   - [Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](http://amzn.com/0321812182) - David Herman
-  - [Eloquent JavaScript](http://eloquentjavascript.net) - Marijn Haverbeke
-  - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Kyle Simpson
+  - [Eloquent JavaScript](http://eloquentjavascript.net/) - Marijn Haverbeke
+  - [You Don't Know JS: ES6 & Beyond](http://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
 
-### Blogs
+**Blogs**
 
   - [DailyJS](http://dailyjs.com/)
   - [JavaScript Weekly](http://javascriptweekly.com/)
-  - [JavaScript, JavaScript...](http://javascriptweblog.wordpress.com/)
-  - [Bocoup Weblog](http://weblog.bocoup.com/)
+  - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
+  - [Bocoup Weblog](https://bocoup.com/weblog)
   - [Adequately Good](http://www.adequatelygood.com/)
-  - [NCZOnline](http://www.nczonline.net/)
+  - [NCZOnline](https://www.nczonline.net/)
   - [Perfection Kills](http://perfectionkills.com/)
   - [Ben Alman](http://benalman.com/)
   - [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
   - [Dustin Diaz](http://dustindiaz.com/)
-  - [nettuts](http://net.tutsplus.com/?s=javascript)
+  - [nettuts](http://code.tutsplus.com/?s=javascript)
 
-### Podcasts
+**Podcasts**
 
-  - [JavaScript Jabber](http://devchat.tv/js-jabber/)
-
+  - [JavaScript Air](https://javascriptair.com/)
+  - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 **[⬆ back to top](#table-of-contents)**

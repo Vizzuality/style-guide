@@ -4,7 +4,7 @@ This styleguide is a resource for front end developers, providing a commons lang
 
 ## Languages
 
-* [Sass](styles/)
+* [Sass](styles/) as default language for styling
 * [Javascript](javascript/)
 
 ## Tools
@@ -45,7 +45,11 @@ This styleguide is a resource for front end developers, providing a commons lang
 
 **IDE and text editor**
 
-[Webstorm](https://www.jetbrains.com/webstorm/), [Sublime Text 3](http://www.sublimetext.com/3), [Atom](https://atom.io/) or similar supporting the next modules:
+* [Webstorm](https://www.jetbrains.com/webstorm/)
+* [Sublime Text 3](http://www.sublimetext.com/3)
+* [Atom](https://atom.io/)
+
+or similar supporting the next modules:
 
 * Editorconfig (Required)
 * Emmet

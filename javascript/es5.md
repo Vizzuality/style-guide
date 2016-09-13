@@ -1,6 +1,6 @@
 # ES5 Vizzuality's JavaScript Style Guide
 
-Revised at 31 August 2015.
+Revised at 13 September 2016.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Revised at 31 August 2015.
   1. [Events](#events)
   1. [Modules](#modules)
   1. [jQuery](#jquery)
-  1. [Resources](#resources)
+  1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
 
 ## Types
 
@@ -182,7 +182,7 @@ Revised at 31 August 2015.
     var fullName = 'Bob ' + this.lastName;
     ```
 
-  - Strings longer than 80 characters should be written across multiple lines using string concatenation.
+  - Strings longer than 100 characters should be written across multiple lines using string concatenation.
   - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
 
     ```javascript
@@ -255,7 +255,7 @@ Revised at 31 August 2015.
 
     ```javascript
     // anonymous function expression
-    var anonymous = function() {
+    var anonymous = function () {
       return true;
     };
 
@@ -265,9 +265,9 @@ Revised at 31 August 2015.
     };
 
     // immediately-invoked function expression (IIFE)
-    (function() {
+    (function () {
       console.log('Welcome to the Internet. Please follow me.');
-    })();
+    }());
     ```
 
   - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
@@ -405,7 +405,7 @@ Revised at 31 August 2015.
 
     ```javascript
     // bad
-    function() {
+    function () {
       test();
       console.log('doing stuff..');
 
@@ -421,7 +421,7 @@ Revised at 31 August 2015.
     }
 
     // good
-    function() {
+    function () {
       var name = getName();
 
       test();
@@ -437,7 +437,7 @@ Revised at 31 August 2015.
     }
 
     // bad - unnecessary function call
-    function() {
+    function () {
       var name = getName();
 
       if (!arguments.length) {
@@ -450,7 +450,7 @@ Revised at 31 August 2015.
     }
 
     // good
-    function() {
+    function () {
       var name;
 
       if (!arguments.length) {
@@ -505,7 +505,7 @@ Revised at 31 August 2015.
 
       anonymous(); // => TypeError anonymous is not a function
 
-      var anonymous = function() {
+      var anonymous = function () {
         console.log('anonymous function expression');
       };
     }
@@ -623,10 +623,10 @@ Revised at 31 August 2015.
     }
 
     // bad
-    function() { return false; }
+    function () { return false; }
 
     // good
-    function() {
+    function () {
       return false;
     }
     ```
@@ -705,7 +705,7 @@ Revised at 31 August 2015.
     function getType() {
       console.log('fetching type...');
       // set the default type to 'no type'
-      var type = this._type || 'no type';
+      var type = this.type || 'no type';
 
       return type;
     }
@@ -715,7 +715,7 @@ Revised at 31 August 2015.
       console.log('fetching type...');
 
       // set the default type to 'no type'
-      var type = this._type || 'no type';
+      var type = this.type || 'no type';
 
       return type;
     }
@@ -756,17 +756,17 @@ Revised at 31 August 2015.
 
     ```javascript
     // bad
-    function() {
+    function () {
     ∙∙∙∙var name;
     }
 
     // bad
-    function() {
+    function () {
     ∙var name;
     }
 
     // good
-    function() {
+    function () {
     ∙∙var name;
     }
     ```
@@ -835,14 +835,14 @@ Revised at 31 August 2015.
 
     ```javascript
     // bad
-    (function(global) {
+    (function (global) {
       // ...stuff...
     })(this);
     ```
 
     ```javascript
     // bad
-    (function(global) {
+    (function (global) {
       // ...stuff...
     })(this);↵
     ↵
@@ -850,7 +850,7 @@ Revised at 31 August 2015.
 
     ```javascript
     // good
-    (function(global) {
+    (function (global) {
       // ...stuff...
     })(this);↵
     ```
@@ -913,19 +913,19 @@ Revised at 31 August 2015.
 
     // bad
     var obj = {
-      foo: function() {
+      foo: function () {
       },
-      bar: function() {
+      bar: function () {
       }
     };
     return obj;
 
     // good
     var obj = {
-      foo: function() {
+      foo: function () {
       },
 
-      bar: function() {
+      bar: function () {
       }
     };
 
@@ -1008,19 +1008,19 @@ Revised at 31 August 2015.
 
     ```javascript
     // bad
-    (function() {
+    (function () {
       var name = 'Skywalker'
       return name
     })()
 
     // good
-    (function() {
+    (function () {
       var name = 'Skywalker';
       return name;
     })();
 
     // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
-    ;(function() {
+    ;(function () {
       var name = 'Skywalker';
       return name;
     })();
@@ -1166,42 +1166,52 @@ Revised at 31 August 2015.
     });
     ```
 
-  - Use a leading underscore `_` when naming private properties.
+  - Do not use trailing or leading underscores.
+
+  > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won't count as breaking, or that tests aren't needed. tl;dr: if you want something to be “private”, it must not be observably present.
 
     ```javascript
     // bad
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
+    this._firstName = 'Panda';
 
     // good
-    this._firstName = 'Panda';
+    this.firstName = 'Panda';
     ```
 
-  - When saving a reference to `this` use `_this`.
+  - Don't save references to this. Use Function#bind.
 
     ```javascript
     // bad
-    function() {
+    function () {
       var self = this;
-      return function() {
+      return function () {
         console.log(self);
       };
     }
 
     // bad
-    function() {
+    function () {
       var that = this;
-      return function() {
+      return function () {
         console.log(that);
       };
     }
 
-    // good
-    function() {
+    // bad
+    function () {
       var _this = this;
-      return function() {
+      return function () {
         console.log(_this);
       };
+    }
+
+    // good
+    function () {
+      return function () {
+        console.log(this);
+      }.bind(this);
     }
     ```
 
@@ -1209,7 +1219,7 @@ Revised at 31 August 2015.
 
     ```javascript
     // bad
-    var log = function(msg) {
+    var log = function (msg) {
       console.log(msg);
     };
 
@@ -1233,7 +1243,7 @@ Revised at 31 August 2015.
     // bad
     var CheckBox = require('./checkBox');
 
-    // good but only for Rails projects
+    // bad
     var CheckBox = require('./check_box');
 
     // good
@@ -1285,11 +1295,11 @@ Revised at 31 August 2015.
       this.set('lightsaber', lightsaber);
     }
 
-    Jedi.prototype.set = function(key, val) {
+    Jedi.prototype.set = function set(key, val) {
       this[key] = val;
     };
 
-    Jedi.prototype.get = function(key) {
+    Jedi.prototype.get = function get(key) {
       return this[key];
     };
     ```
@@ -1331,12 +1341,12 @@ Revised at 31 August 2015.
 
     ```javascript
     // bad
-    Jedi.prototype.jump = function() {
+    Jedi.prototype.jump = function jump() {
       this.jumping = true;
       return true;
     };
 
-    Jedi.prototype.setHeight = function(height) {
+    Jedi.prototype.setHeight = function setHeight(height) {
       this.height = height;
     };
 
@@ -1345,12 +1355,12 @@ Revised at 31 August 2015.
     luke.setHeight(20); // => undefined
 
     // good
-    Jedi.prototype.jump = function() {
+    Jedi.prototype.jump = function jump() {
       this.jumping = true;
       return this;
     };
 
-    Jedi.prototype.setHeight = function(height) {
+    Jedi.prototype.setHeight = function setHeight(height) {
       this.height = height;
       return this;
     };
@@ -1392,7 +1402,7 @@ Revised at 31 August 2015.
 
     ...
 
-    $(this).on('listingUpdated', function(e, listingId) {
+    $(this).on('listingUpdated', function (e, listingId) {
       // do something with listingId
     });
     ```
@@ -1405,7 +1415,7 @@ Revised at 31 August 2015.
 
     ...
 
-    $(this).on('listingUpdated', function(e, data) {
+    $(this).on('listingUpdated', function (e, data) {
       // do something with data.listingId
     });
     ```
@@ -1423,7 +1433,7 @@ Revised at 31 August 2015.
     ```javascript
     // fancyInput/fancyInput.js
 
-    !function(global) {
+    !function (global) {
       'use strict';
 
       var previousFancyInput = global.FancyInput;
@@ -1506,22 +1516,8 @@ Revised at 31 August 2015.
 **[⬆ back to top](#table-of-contents)**
 
 
-## Resources
+## ECMAScript 5 Compatibility
 
-**Read This**
+  - Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/).
 
-  - [Annotated ECMAScript 5.1](http://es5.github.com/)
-
-**Other Style Guides**
-
-  - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-  - [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
-  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
-  - [JavaScript Standard Style](https://github.com/feross/standard)
-
-**Other Styles**
-
-  - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
-  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
-  - [Popular JavaScript Coding Conventions on Github](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
-  - [Multiple var statements in JavaScript, not superfluous](http://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
+**[⬆ back to top](#table-of-contents)**
