@@ -1,0 +1,30 @@
+- __bin__: git hooks, cli utilities, etc
+- __config__: config files that don't need to be at the root of the project
+- __dist__: output (html, js, css, images...) of the build toolchain (webpack, babel)
+- __html__: html (including index.html) or html templates (ejs, hbs, etc)
+  - __includes__: templates includes
+- __node__: server side code
+- __public__: any files that need to be served as public static resources
+  - __fonts__
+  - __data__: static JSON files (for mockups, etc)
+- __src__: JS/ES6 source files
+  - __actions__
+    - _user.actions.js_
+  - __components__
+    - _map.component.js_
+  - __templates__ (Backbone projects)
+  - __containers__
+    - _map.container.js_
+  - __pages__: bundle entry points
+    - _index.js_
+  - __reducers__
+    - _user.reducer.js_
+  - __utils__
+- __styles__: SASS or CSS files
+  - __components__
+  - __layouts__
+- _dotfiles..._
+- _browserlist_
+- _LICENSE_
+- _Procfile_
+- _README.md_
